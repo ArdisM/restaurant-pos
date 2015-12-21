@@ -8,7 +8,7 @@ get '/new' => 'employees#new'
 get '/log_in' => 'employees#log_in'
 
 
-root 'employees#index'
+root 'employees#log_in'
 
 resources :employees
 resources :parties
