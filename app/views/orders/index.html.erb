@@ -1,9 +1,10 @@
-<h3>Party Orders</h3>
+<h3>Party Orders | curret server: <%= current_employee.name %><%= button_to "Log Out", sessions_path, method: :delete %> </h3>
+
 
 <%= form_for @order do |f| %>
   <%= f.collection_select(:food_id, Food.all, :id, :name) %>
   <%= f.collection_select(:party_id, Party.all, :id, :table_numb) %>
-  <%= f.submit %>
+ <%= f.submit %>
 <% end %>
 
 <ul>
@@ -11,8 +12,8 @@
     <li>
     Table <%= order.party.table_numb %> :
         <%= order.food.name %>
-        <%= order.food.price %>
-     <%= button_to "Remove", order_path(order), method: :delete%>
+        - $<%= order.food.price %>
+           <%= button_to "Remove", order_path(order), method: :delete%>
     </li>
   <% end %>
 </ul>

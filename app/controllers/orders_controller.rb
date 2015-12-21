@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:party_id, :food_id)
+    params.require(:order).permit(:party_id, :food_id, :employee_id)
   end
 
 end

@@ -1,15 +1,1 @@
-<h1> New Party </h1>
 
-<%= form_for @party do |f| %>
-  <%= f.label :tablenumb %>
-  <%= f.text_field :table_numb %>
-  <%= f.submit %>
-<% end %>
-
-<ul>
-  <% @parties.each do |party| %>
-    <li>
-      <%= party.table_numb %> <%= button_to "Remove", party_path(party), method: :delete%>
-    </li>
-  <% end %>
-</ul>

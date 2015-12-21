@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 post '/sessions' => 'sessions#create'
 delete '/sessions' => 'sessions#destroy'
+
 get '/new' => 'parties#new'
 get '/new' => 'employees#new'
 get '/log_in' => 'employees#log_in'
