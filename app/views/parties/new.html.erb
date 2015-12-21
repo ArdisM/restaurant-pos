@@ -1,0 +1,16 @@
+<h3>Welcome <%= current_employee.name %>: parties</h3>
+
+<%= button_to "Log Out", sessions_path, method: :delete %>
+
+<%= form_for @party do |f| %>
+  <%= f.text_field :table_numb %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @parties.each do |party| %>
+    <li>
+      <%= party.name %> <%= button_to "Remove", party_path(party), method: :delete%>
+    </li>
+  <% end %>
+</ul>

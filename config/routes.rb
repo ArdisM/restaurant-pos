@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+  post '/sessions' => 'sessions#create'
+    delete '/sessions' => 'sessions#destroy'
+resources :employees
+resources :parties
+
+get '/new' => 'parties#new'
+get '/new' => 'employees#new'
+
+get '/log_in' => 'employees#log_in'
+
+root 'welcome#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
