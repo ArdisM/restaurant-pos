@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20151218192144) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "classification"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20151218192144) do
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "classification"
     t.decimal  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20151218192144) do
   add_index "orders", ["party_id"], name: "index_orders_on_party_id", using: :btree
 
   create_table "parties", force: :cascade do |t|
-    t.integer  "table_numb"
+    t.string   "table_numb"
     t.integer  "employee_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

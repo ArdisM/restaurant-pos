@@ -1,0 +1,18 @@
+<h3>Party Orders</h3>
+
+<%= form_for @order do |f| %>
+  <%= f.collection_select(:food_id, Food.all, :id, :name) %>
+  <%= f.collection_select(:party_id, Party.all, :id, :table_numb) %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @orders.each do |order| %>
+    <li>
+    Table <%= order.party.table_numb %> :
+        <%= order.food.name %>
+        <%= order.food.price %>
+     <%= button_to "Remove", order_path(order), method: :delete%>
+    </li>
+  <% end %>
+</ul>

@@ -21,6 +21,11 @@ end
     redirect_to parties_path
   end
 
+  #def show
+  #  @party = Party.find(params[:id])
+
+  #end
+
   private
 
   def party_params
