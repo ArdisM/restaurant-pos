@@ -13,7 +13,7 @@
        <br> With 15% gratuity: <%= '%.2f' % (party.total + (party.total * 0.15) + (party.total * 0.09)) %>
        <br> With 20% gratuity: <%= '%.2f' % (party.total + (party.total * 0.20) + (party.total * 0.09)) %>
        <br> With 25% gratuity: <%= '%.2f' % (party.total + (party.total * 0.25) + (party.total * 0.09)) %>
-       <%= party.table_numb %> <%= button_to "Remove", party_path(party), method: :delete%>
+    Table:<%= party.table_numb %> <%= button_to "Remove", party_path(party), method: :delete%>
      </li>
    </ul>
  <% end %>
