@@ -14,17 +14,8 @@
  *= require_self
  */
 body{
-  background-color: black;
+  background-color: orange;
   text-align: center;
-  background-image: url("http://static1.squarespace.com/static/52f95489e4b0a1dcb8f7b2ec/t/54590dd5e4b0d95c60e07df0/1415122391078/PA+Background+2.jpg?format=2500w");
- background-repeat: no-repeat;
 
-}
-
-label{
-  color: orange;
-}
-
-h1{
-  color: orange;
+ 
 }
