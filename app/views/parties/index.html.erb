@@ -1,1 +1,19 @@
-
+<% @parties.each do |party| %>
+ <ul>
+   <li>
+     <h1> Table: <%= party.table_numb %> </h1>
+   </li>
+     <% party.foods.each do |food| %>
+     <li>Menu Item: <%= food.name %> - Price: <%= '%.2f' % food.price %></li>
+     <% end %>
+     <li>
+       Order Total: <%= '%.2f' % party.total %>
+       <br> Tax: <%= '%.2f' % (party.total * 0.09) %>
+       <br> Sub-Total: <%= '%.2f' % (party.total + (party.total * 0.09)) %>
+       <br> With 15% gratuity: <%= '%.2f' % (party.total + (party.total * 0.15) + (party.total * 0.09)) %>
+       <br> With 20% gratuity: <%= '%.2f' % (party.total + (party.total * 0.20) + (party.total * 0.09)) %>
+       <br> With 25% gratuity: <%= '%.2f' % (party.total + (party.total * 0.25) + (party.total * 0.09)) %>
+       <%= party.table_numb %> <%= button_to "Remove", party_path(party), method: :delete%>
+     </li>
+   </ul>
+ <% end %>

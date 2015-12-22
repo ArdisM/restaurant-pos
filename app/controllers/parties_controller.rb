@@ -12,20 +12,16 @@ end
 
   def create
     Party.create(party_params)
-    redirect_to parties_path
+    redirect_to orders_path
   end
 
 
   def destroy
-    Party.delete(params[:id])
+    Party.destroy(params[:id])
     redirect_to parties_path
   end
 
-  #def show
-  #  @party = Party.find(params[:id])
-
-  #end
-
+  
   private
 
   def party_params
