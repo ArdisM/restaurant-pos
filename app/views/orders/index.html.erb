@@ -7,6 +7,7 @@
  <%= f.submit %>
 <% end %>
 
+
 <ul>
   <% @orders.each do |order| %>
     <li>
@@ -14,6 +15,15 @@
         <%= order.food.name %>
         - $<%= order.food.price %>
            <%= button_to "Remove", order_path(order), method: :delete%>
+
+           <% if order.created_at.to_time > 10.minutes.ago  %>
+            <div class="four column green"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></div>
+            <% elsif order.created_at.to_time < 10.minutes.ago && order.created_at.to_time > 50.minutes.ago %>
+            <div class="four column yellow"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></div>
+            <% elsif order.created_at.to_time < 20.minutes.ago %>
+            <div class="four column red"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></div>
+
     </li>
   <% end %>
 </ul>
+<% end %>
