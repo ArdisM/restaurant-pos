@@ -1,4 +1,4 @@
-<h1>Party Orders | curret server: <%= current_employee.name %><%= button_to "Log Out", sessions_path, method: :delete %> </h1>
+<h1>Party Orders | current server: <%= current_employee.name %><%= button_to "Log Out", sessions_path, method: :delete %> </h1>
 
 
 <%= form_for @order do |f| %>
@@ -6,6 +6,9 @@
   <%= f.collection_select(:party_id, Party.all, :id, :table_numb) %>
  <%= f.submit %>
 <% end %>
+
+ <%= button_to "parties", parties_path, method: :get %><%= button_to "go back to tables", parties_new_path, method: :get %>
+
 
 
 <ul>

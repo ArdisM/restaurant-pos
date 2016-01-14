@@ -3,13 +3,17 @@ Rails.application.routes.draw do
 post '/sessions' => 'sessions#create'
 delete '/sessions' => 'sessions#destroy'
 
-get '/new' => 'parties#new'
-get '/new' => 'employees#new'
+get 'parties/new' => 'parties#new'
+get '/profile' => 'admins#profile'
+get '/log_in' => 'admins#log_in'
+get 'parties/index' => 'parties#index'
+get 'employees/new' => 'employees#new'
 get '/log_in' => 'employees#log_in'
 
 
 root 'employees#log_in'
 
+resources :admins
 resources :employees
 resources :parties
 resources :foods

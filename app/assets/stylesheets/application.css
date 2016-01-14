@@ -16,6 +16,22 @@
 body{
   background-color: orange;
   text-align: center;
+}
 
- 
+.green{
+  background-color: green;
+  color: black;
+  text-align: center;
+}
+
+.red{
+  background-color: red;
+  color: black;
+  text-align: center;
+}
+
+.yellow{
+  background-color: yellow;
+  color: black;
+  text-align: center;
 }
